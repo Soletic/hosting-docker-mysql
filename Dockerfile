@@ -24,7 +24,7 @@ ENV DATA_VOLUME_LOGS /var/log
 RUN rm -rf /var/lib/mysql/*
 
 # VOLUMES
-VOLUME [ "${DATA_VOLUME_LOGS}" "${DATA_VOLUME_MYSQL_BACKUP}" ]
+VOLUME [ "${DATA_VOLUME_LOGS}", "${DATA_VOLUME_MYSQL_BACKUP}" ]
 
 # ADD FILES TO FILE SYSTEM
 ADD init_mysql.sh /root/scripts/init_mysql.sh
