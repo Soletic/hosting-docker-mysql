@@ -19,6 +19,12 @@ $ docker build -t soletic/mysql ./mysql
 $ docker run -d --name=example.mysql -e WORKER_NAME=example -p 20136:3306 soletic/mysql
 ```
 
+### Share host directory to store backups
+
+```
+$ docker run -d --name=example.mysql -e WORKER_NAME=example -v /path/host/backup:/home/backup -p 20136:3306 soletic/mysql
+```
+
 * WORKER_NAME : a user name without spaces and used to setup account for mysql
 
 ## Running options

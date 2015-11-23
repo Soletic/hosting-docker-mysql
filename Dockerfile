@@ -17,7 +17,7 @@ ENV MYSQL_PASSWORD p@ssword
 
 # Environment variables of data
 ENV DATA_VOLUME_MYSQL_DB /var/lib/mysql
-ENV DATA_VOLUME_MYSQL_BACKUP /var/lib/mysql/backup
+ENV DATA_VOLUME_MYSQL_BACKUP /home/backup
 ENV DATA_VOLUME_LOGS /var/log
 
 # Remove pre-installed database
