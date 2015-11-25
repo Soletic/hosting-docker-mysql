@@ -64,8 +64,8 @@ echo "    mysql -u${WORKER_NAME} -p$USERPASS -h<host> -P<port>"
 echo ""
 echo "========================================================================"
 
-echo "root:$PASS" > ${DATA_VOLUME_MYSQL_DB}/credentials
-echo "${WORKER_NAME}:$USERPASS" >> ${DATA_VOLUME_MYSQL_DB}/credentials
+echo "root:$PASS" > ${DATA_VOLUME_MYSQL_BACKUP}/credentials
+echo "${WORKER_NAME}:$USERPASS" >> ${DATA_VOLUME_MYSQL_BACKUP}/credentials
 export MYSQL_PASSWORD=$USERPASS
 
 mysqladmin -uroot -p$PASS shutdown
