@@ -52,7 +52,7 @@ echo "=> Done!"
 echo "=> Creating default database with name db"
 mysql -uroot -p$PASS <<-EOSQL
 			SET @@SESSION.SQL_LOG_BIN=0;
-			CREATE DATABASE db;
+			CREATE DATABASE `${WORKER_NAME}`;
 		EOSQL
 echo "=> Done!"
 
