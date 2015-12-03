@@ -49,10 +49,10 @@ mysql -uroot -p$PASS <<-EOSQL
 echo "=> Done!"
 
 # CREATE DEFAULT DATABASE
-echo "=> Creating default database with name db"
+echo "=> Creating default database with name ${WORKER_NAME}"
 mysql -uroot -p$PASS <<-EOSQL
 			SET @@SESSION.SQL_LOG_BIN=0;
-			CREATE DATABASE `${WORKER_NAME}`;
+			CREATE DATABASE ${WORKER_NAME};
 		EOSQL
 echo "=> Done!"
 

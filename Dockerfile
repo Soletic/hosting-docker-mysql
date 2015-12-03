@@ -2,6 +2,7 @@ FROM soletic/ubuntu
 MAINTAINER Sol&TIC <serveur@soletic.org>
 
 ENV WORKER_NAME soletic
+ENV WORKER_UID 10001
 
 # MYSQL
 RUN apt-get -y update && \
