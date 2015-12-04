@@ -19,7 +19,7 @@
 #
 #=====================================================================
 
-ROOT_CREDENTIALS=$(head -n 1 ${DATA_VOLUME_MYSQL_DB}/credentials)
+ROOT_CREDENTIALS=$(head -n 1 ${DATA_VOLUME_MYSQL_BACKUP}/credentials)
 IFS=':' read -r -a ROOT_CREDENTIALS <<< "$ROOT_CREDENTIALS"
 
 # Username to access the MySQL server e.g. dbuser
