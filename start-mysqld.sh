@@ -26,4 +26,9 @@ else
     echo "=> Using an existing volume of MySQL"
 fi
 
+ROOT_CREDENTIALS=$(head -n 1 ${DATA_VOLUME_MYSQL_BACKUP}/credentials)
+IFS=':' read -r -a ROOT_CREDENTIALS <<< "$ROOT_CREDENTIALS"
+ROOT_PASSWORD="${ROOT_CREDENTIALS[1]}"
+sed -ri -e "s/MYADMIN=.+/MYADMIN=\"mysqladmin -uroot -p$ROOT_PASSWORD\"/" /etc/logrotate.d/mysql-server
+
 exec mysqld_safe
