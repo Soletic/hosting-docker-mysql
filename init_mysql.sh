@@ -12,7 +12,7 @@ done
 
 # SET A RANDOM ROOT PASSWORD
 
-PASS=${MYSQL_PASS:-$(pwgen -s 12 1)}
+PASS=$(pwgen -s 12 1)
 _word=$( [ ${MYSQL_PASS} ] && echo "preset" || echo "random" )
 echo "=> Creating MySQL root user with ${_word} password"
 
@@ -29,8 +29,8 @@ mysql -uroot <<-EOSQL
 		EOSQL
 
 # SET A DEFAULT USER FOR DATABASES
-USERPASS=${MYSQL_PASS:-$(pwgen -s 12 1)}
-_userword=$( [ ${MYSQL_PASS} ] && echo "preset" || echo "random" )
+USERPASS=${MYSQL_PASSWORD:-$(pwgen -s 12 1)}
+_userword=$( [ ${MYSQL_PASSWORD} ] && echo "preset" || echo "random" )
 echo "=> Creating MySQL user for database connections with ${_userword} password"
 
 mysql -uroot -p$PASS <<-EOSQL
